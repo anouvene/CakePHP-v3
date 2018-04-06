@@ -36,7 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 <div class="col-md-3 sidebar">
                     <nav class="sidebar-nav">
                         <div class="sidebar-header">
-                            <a class="sidebar-brand img-responsive" href="<?=$this->Url->build(['controller'=>'Pages','action'=>'display'])?>">
+                            <a class="sidebar-brand img-responsive" href="#">
                                 <span class="icon iconav-brand-icon"><?= $this->Html->image("cake.logo.svg", ["alt" => "Initiation à cake PHP"]) ?></span>
                                 <button id="toggler" class="nav-toggler nav-toggler-md sidebar-toggler" type="button">
                                     <span class="sr-only">Toggle nav</span>
