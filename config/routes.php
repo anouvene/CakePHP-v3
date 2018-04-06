@@ -49,7 +49,12 @@ Router::scope('/', function (RouteBuilder $routes) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, src/Template/Pages/home.ctp)...
      */
-    $routes->connect('/', ['controller' => 'Eleves', 'action' => 'home']);
+    // $routes->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+
+    /**
+     * ...and connect the rest of 'Pages' controller's URLs.
+     */
+    $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     /**
      * Connect catchall routes for all controllers.
@@ -76,13 +81,19 @@ Router::scope('/', function (RouteBuilder $routes) {
  */
 Plugin::routes();
 
-Router::scope('/eleves', function (RouteBuilder $routes) {
+// Router::scope('/eleves', function (RouteBuilder $routes) {
+Router::scope('/', function (RouteBuilder $routes) {
+
+    $routes->connect('eleves', ['controller' => 'Eleves', 'action' => 'home']);
+    $routes->connect('eleves/new', ['controller' => 'Eleves', 'action' => 'add']);
+    $routes->connect('eleves/del/:id', ['controller' => 'Eleves', 'action' => 'del'], ['id' => '\d+']);
+    $routes->connect('eleves/edit/:id', ['controller' => 'Eleves', 'action' => 'edit'], ['id' => '\d+']);
+    $routes->connect('eleves/view/:id', ['controller' => 'Eleves', 'action' => 'view'], ['id' => '\d+']);
+    $routes->connect('eleves/new-note/:id', ['controller' => 'Eleves', 'action' => 'add-note'], ['id' => '\d+']);
+
+    // Add home route
     $routes->connect('/', ['controller' => 'Eleves', 'action' => 'home']);
-    $routes->connect('/new', ['controller' => 'Eleves', 'action' => 'add']);
-    $routes->connect('/del/:id', ['controller' => 'Eleves', 'action' => 'del'], ['id' => '\d+']);
-    $routes->connect('/edit/:id', ['controller' => 'Eleves', 'action' => 'edit'], ['id' => '\d+']);
-    $routes->connect('/view/:id', ['controller' => 'Eleves', 'action' => 'view'], ['id' => '\d+']);
-    $routes->connect('/new-note/:id', ['controller' => 'Eleves', 'action' => 'add-note'], ['id' => '\d+']);
     $routes->fallbacks('DashedRoute');
+
 });
 

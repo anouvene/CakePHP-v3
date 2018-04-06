@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <nav class="sidebar-nav">
                         <div class="sidebar-header">
 
-                            <a class="sidebar-brand img-responsive" href="#">
+                            <a class="sidebar-brand img-responsive" href="<?=$this->Url->build(array('controller'=>'Pages','action'=>'display'))?>">
                                 <span class="icon iconav-brand-icon"><?= $this->Html->image("cake.logo.svg", ["alt" => "Initiation à cake PHP"]) ?></span>
                                 <button id="toggler" class="nav-toggler nav-toggler-md sidebar-toggler" type="button">
                                     <span class="sr-only">Toggle nav</span>
@@ -58,19 +58,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         <ul class="nav nav-pills margin-bottom-20">
                             <!--Requests-->
                             <li class="active">
-                                <a href="#" title="Requests" data-toggle="tooltip" data-placement="right">
+                                <a href="<?=$this->Url->build(array('controller'=>'Pages','action'=>'display'))?>" title="Requests" data-toggle="tooltip" data-placement="right">
                                     <span class="icon icon-text-document"></span>
                                 </a>
                             </li>
                             <!--Proposals-->
                             <li>
-                                <a href="#" title="Proposals" data-toggle="tooltip" data-placement="right">
+                                <a href="<?=$this->Url->build(array('controller'=>'Pages','action'=>'display'))?>" title="Proposals" data-toggle="tooltip" data-placement="right">
                                     <span class="icon icon icon-folder-images"></span>
                                 </a>
                             </li>
                             <!--Settings-->
                             <li>
-                                <a href="#" title="Settings" data-toggle="tooltip" data-placement="right">
+                                <a href="<?=$this->Url->build(array('controller'=>'Pages','action'=>'display'))?>" title="Settings" data-toggle="tooltip" data-placement="right">
                                     <span class="icon icon-tools"></span>
 
                                 </a>

@@ -40,13 +40,10 @@ class PagesController extends AppController
      */
     public function display(...$path)
     {
-        // Configure::write('test', 'Ma valeur');
-        // dump(Configure::read('app_name'));
-        // die();
         $count = count($path);
 
         if (!$count) {
-            return $this->redirect('/eleves/');
+            return $this->redirect('/');
         }
         if (in_array('..', $path, true) || in_array('.', $path, true)) {
             throw new ForbiddenException();
